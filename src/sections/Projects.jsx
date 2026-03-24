@@ -5,7 +5,7 @@ const projects = [
     title: "Non-Performing Loan Management System for Banks",
     description:
         "A centralized, automated, and user-friendly platform designed to help banks manage non-performing loan portfolios efficiently, improve tracking, and support informed decision-making.",
-    image: "/projects/project1.JPG",
+    image: "/projects/project1.jpg",
     tags: ["Django", "React", "REST API", "Celery"],
     link: "#",
     github: "",
@@ -15,7 +15,7 @@ const projects = [
     title: "Beauty Salon Booking System",
     description:
         "A modern and intuitive online booking platform that streamlines salon service scheduling, enhances customer experience, and simplifies appointment management for business owners.",
-    image: "/projects/project2.JPG",
+    image: "/projects/project2.jpg",
     tags: ["Django", "CSS", "REST API", "Celery"],
     link: "#",
     github: "#",
@@ -25,7 +25,7 @@ const projects = [
     title: "Grocery Management System",
     description:
         "A lightweight and efficient management system that helps small grocery businesses handle products, inventory, and daily operations with ease.",
-    image: "/projects/project3.JPG",
+    image: "/projects/project3.jpg",
     tags: ["Flask", "CSS", "HTML"],
     link: "#",
     github: "#",
