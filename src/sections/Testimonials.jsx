@@ -5,22 +5,22 @@ const testimonials = [
   {
     quote:
       "Client testimonials will be shared here as I complete more real-world projects and collaborations.",
-    author: "Future Client",
-    role: "Web Development Client",
+    author: "Client Name",
+    role: "Client Role",
     avatar: null, // replace later with image URL
   },
   {
     quote:
       "Feedback from clients will appear here as I continue delivering high-quality web solutions.",
-    author: "Future Client",
-    role: "Business Owner",
+    uthor: "Client Name",
+    role: "Client Role",
     avatar: null,
   },
   {
     quote:
       "I’m currently working with clients and will be adding their experiences here soon.",
-    author: "Future Client",
-    role: "Project Collaborator",
+    uthor: "Client Name",
+    role: "Client Role",
     avatar: null,
   },
 ];
