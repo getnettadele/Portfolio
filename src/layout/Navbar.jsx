@@ -3,11 +3,11 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navLinks = [
-    {href: "about", label: "About"},
-    {href: "projects", label: "Projects"},
-    {href: "experience", label: "Experience"},
-    {href: "testimonials", label: "Testimonials"},
-    {href: "contact", label: "Contact"},
+    {href: "#about", label: "About"},
+    {href: "#projects", label: "Projects"},
+    {href: "#experience", label: "Experience"},
+    {href: "#testimonials", label: "Testimonials"},
+    {href: "#contact", label: "Contact"},
 ]
 
 export const Navbar = () => {
@@ -27,23 +27,37 @@ export const Navbar = () => {
                 <a
                 href="#"
                 className="text-xl font-bold tracking-tight hover:text-primary">
-                    GT<span className="text-primary">.</span>
+                    Get<span className="text-primary">.</span>
                 </a>
                 {/*Desktop nav */}
                 <div className="hidden md:flex items-center gap-1">
                     <div className="glass flex rounded-full px-2 items-center gap-1">
                        {navLinks.map((link, index) => (
-                        <a href={link.href} 
-                            key={index} 
-                            className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface">
+                        <a
+                            key={index}
+                            href={link.href}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                const id = link.href.replace("#", "");
+                                const section = document.getElementById(id);
+                                if (section) {
+                                section.scrollIntoView({ behavior: "smooth" });
+                                }
+                            }}
+                            className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-full hover:bg-surface"
+                            >
                             {link.label}
-                        </a>
+                            </a>
                        ))}                        
                     </div>
                 </div>
                             {/*CTA Button */}
             <div className="hidden md:block">
-                <Button size="sm">Contact Me</Button>
+                <Button size="sm" onClick={() => {
+                    const section = document.getElementById("contact");
+                     if (section) section.scrollIntoView({ behavior: "smooth" });
+                    }}
+        >Contact Me</Button>
             </div>
             {/*Mobile Menu Button */}
              <button className="md:hidden p-2 text-foreground cursor-pointer" 
@@ -56,15 +70,33 @@ export const Navbar = () => {
             {isMobileMenuOpen && <div className="md:hidden glass-strong animate-fade-in">
                 <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
                    {navLinks.map((link, index) => (
-                        <a href={link.href} 
+                        <a
+                            href={link.href}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                setMobileMenuOpen(false);
+                                const id = link.href.replace("#", "");
+                                const section = document.getElementById(id);
+                                if (section) {
+                                section.scrollIntoView({ behavior: "smooth" });
+                                }
+                            }} 
                             key={index}
-                            onClick={() => setMobileMenuOpen(false)}
                             className="text-lg text-muted-foreground hover:text-foreground py-2">
                             {link.label}
                         </a>
                        ))}
-               <Button  onClick={() => setMobileMenuOpen(false)}>
-                Contact Me</Button>
+               <Button
+                        size="sm"
+                        onClick={() => {
+                            const section = document.getElementById("contact");
+                            if (section) {
+                            section.scrollIntoView({ behavior: "smooth" });
+                            }
+                        }}
+                        >
+                        Contact Me
+                        </Button>
                 </div>
 
             </div>}
