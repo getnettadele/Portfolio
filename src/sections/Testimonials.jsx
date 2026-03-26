@@ -1,5 +1,5 @@
 
-import { ChevronLeft, ChevronRight, Quote} from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote, User} from "lucide-react";
 import React, { useState } from "react";
 const testimonials = [
   {
@@ -7,19 +7,19 @@ const testimonials = [
       "Client testimonials will be shared here as I complete more real-world projects and collaborations.",
     author: "Client Name",
     role: "Client Role",
-    avatar: null, // replace later with image URL
+    avatar: null, 
   },
   {
     quote:
       "Feedback from clients will appear here as I continue delivering high-quality web solutions.",
-    uthor: "Client Name",
+    author: "Client Name",
     role: "Client Role",
     avatar: null,
   },
   {
     quote:
       "I’m currently working with clients and will be adding their experiences here soon.",
-    uthor: "Client Name",
+    author: "Client Name",
     role: "Client Role",
     avatar: null,
   },
@@ -34,6 +34,7 @@ export const Testimonials = () => {
         setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
     };
 
+    const activeTestimonial = testimonials[activeIndex];
 
     return (
         <section id="testimonials" className="py-32 relative overflow-hidden">
@@ -71,11 +72,17 @@ export const Testimonials = () => {
                         <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 pt-4"> 
                             "{testimonials[activeIndex].quote}"</blockquote>
                         <div className="flex items-center gap-4">
-                            <img
-                            src={testimonials[activeIndex].avatar}
-                            alt={testimonials[activeIndex].author}
-                            className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
-                            />
+                            {activeTestimonial.avatar ? (
+                                <img
+                                    src={activeTestimonial.avatar}
+                                    alt={activeTestimonial.author}
+                                    className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
+                                />
+                                ) : (
+                                <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center ring-2 ring-primary/20">
+                                    <User className="w-7 h-7 text-primary" />
+                                </div>
+                                )}
                             <div >
                                 <div className="font-semibold">{testimonials[activeIndex].author}</div>
                                 <div className="text-sm text-muted-foreground">
