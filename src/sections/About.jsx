@@ -50,7 +50,7 @@ export const About = () => {
                                 and it has evolved in to a deep expertise in modern frontend technologies,
                             </p>
                             <p>
-                                I specialize in React, Node.js, and JavaScript, Buildingeverything from
+                                I specialize in Django, React, Node.js, and JavaScript, Building everything from
                                  sleek landing pages to complex enterprise applications. My approach 
                                  combines technical excellence with a keen eye for design and user experience.
                             </p>
